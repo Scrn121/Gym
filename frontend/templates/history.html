@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📊 Последние тренировки</h2>
+
+{% if records %}
+<table>
+	<thead>
+		<tr>
+			<th>Дата</th>
+			<th>Упражнение</th>
+			<th>Подх×Повт×Вес</th>
+			<th>Объём</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for r in records %}
+		<tr>
+			<td>{{ r.workout_date|default("—") }}</td>
+			<td>{{ r.name|default("—") }}</td>
+			<td>{{ r.sets|default(0) }}×{{ r.reps|default(0) }}×{{ r.weight_kg|default(0)|round(1) }}</td>
+			<td>{{ r.volume_kg|default(0)|round(1) }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% else %}
+<p>Нет записей</p>
+{% endif %}
+{% endblock %}

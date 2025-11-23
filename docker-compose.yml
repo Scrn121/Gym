@@ -12,7 +12,24 @@ services:
       - "5432:5432"
     volumes:
       - ./init:/docker-entrypoint-initdb.d
-      - pgdata:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: gym-backend
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: gym
+      DB_USER: user
+      DB_PASSWORD: password
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/app
+      - ./frontend:/app/frontend
 
 volumes:
-  pgdata:
+  pg_data:
