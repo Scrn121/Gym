@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>🏋️ Gym Tracker</title>
+	<style>
+		body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+		.form-group { margin-bottom: 1rem; }
+		label { display: block; margin-bottom: 0.25rem; font-weight: bold; }
+		input, select { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+		button { background: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; }
+		button:hover { background: #1d4ed8; }
+		.alert { padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+		.alert-success { background: #d1fae5; border: 1px solid #10b981; color: #065f46; }
+		.alert-warning { background: #fef3c7; border: 1px solid #f59e0b; color: #7c2d12; }
+		.alert-info { background: #dbeafe; border: 1px solid #3b82f6; color: #1e3a8a; }
+	</style>
+</head>
+<body>
+	<h1>Gym Tracker</h1>
+	{% block content %}{% endblock %}
+</body>
+</html>
